@@ -1,0 +1,191 @@
+* {
+	box-sizing:border-box; /* makes styling widths much easier */
+
+}
+#banner {
+	position: relative;
+	width: 100%;
+	padding-top: max(2%, 2rem);
+}
+#logo {
+	width: max(22%, 8rem);
+	margin-left: 1.5%;
+	margin-bottom: 2%;
+}
+
+body {
+	background-color: #39383f;
+	margin: 0;
+	padding: 0;
+}
+/* learnt how to make responsive navbar from WebDevSimplified, Feb 23, 2019, Responsive Navbar Tutorial (2019) YouTube. YouTube. Available at: https://www.youtube.com/watch?v=At4B7A4GOPg (Accessed: October 28, 2022). */
+.navbar {
+	position: sticky;
+	top: 0px;
+	margin-top: 20px;
+	display: flex; /* use flex box to display these objects as we want them to line up side by side*/
+	justify-content: space-between; /*push them as far apart from each other */
+	align-items: center;
+	background-color: #504887;
+	color: #e5a2be;
+}
+
+.title{
+	font-size: 1.5rem;
+	margin: .5rem;
+}
+
+.navbar-links ul {
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.navbar-links li {
+	list-style: none;
+}
+
+.navbar-links a{
+	text-decoration: none;
+	color: #e5a2be;
+	padding: 1rem;
+	display: block;
+}
+
+/* style nav bar to have animation on hover */
+.navbar-links li:hover {
+	background-color: #8f6ea6;
+}
+
+.toggle-button {
+	position: absolute; /*absolute positioning to force it to be on the right side of the screen */
+	top: 1.45rem; /*pushes it 1.45rem form top of screen */
+	right: 1rem;
+	display: none;
+	flex-direction: column; /*so all different spans line up on top of each other */
+	justify-content: space-between; /*as much space between elements */
+	width: 30px;
+	height: 21px;
+}
+
+.toggle-button .bar {
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
+}
+/*.img {
+	max-width: 50%;
+	height: auto;
+	display: block;
+	object-fit: contain;
+} */
+.wrapper {
+    width: 100%;
+}
+h1 {
+	padding: 0px 30px 20px;
+    font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+    font-size: 2em;
+	color: rgb(241, 206, 206);
+    line-height: 24px;
+	text-align: left;
+	margin: 2em;
+}
+
+h2 {
+	padding: 0px 30px 20px;
+    font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+    font-size: 2em;
+	color: rgb(241, 206, 206);
+    line-height: 24px;
+	text-align: left;
+	margin: 2em;
+}
+p {
+    padding: 0px 30px 20px;
+    font-family: monospace;
+    font-size: 1em;
+	color: #e5a2be;
+    line-height: 24px;
+	text-align: left;
+	margin: 2em;
+}
+/* search bar */
+.container {
+	box-sizing: border-box;
+	width:100%;
+	position: relative;
+	padding: 5%; 
+}
+
+.search-bar {
+	box-sizing: 50%;
+	width: 100%;
+	display: flex;
+}
+
+.search-bar input {
+	background: transparent;
+	flex: 1;
+	border: 0;
+	outline: none;
+	color: #cac7ff
+}
+::placeholder {
+	color: #cac7ff;
+}
+
+.search-bar button img {
+	width: 25px;
+}
+
+.search-bar button {
+	border: 0;
+	border-radius: 60px;
+	width: 50px;
+	height: 50px;
+	background: #58629b;
+	cursor: pointer;
+}
+
+.icon {
+	margin-left: 5em;
+	margin-bottom: 50em;
+	max-width: 5em;
+	border-radius: 50%;
+}
+
+/* make hamburger menu show when screen size small*/
+@media (max-width: 800px) {
+	.toggle-button {
+		display: flex;
+	}
+	.navbar-links {
+		display: none; 
+		width: 100%;
+	}
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.navbar-links ul {
+		width: 100%;
+		flex-direction: column;
+	}
+	.navbar-links li {
+		text-align: center;
+	}
+	.navbar-links a {
+		padding: .5rem 1rem;
+	}
+	/* when active we want display to be flex */
+	.navbar-links.active {
+		display: flex;
+	}
+}
+
+/*https://www.w3docs.com/snippets/css/how-to-maintain-the-aspect-ratio-of-a-div-with-css.html */

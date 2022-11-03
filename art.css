@@ -154,9 +154,21 @@ p {
 
 .icon {
 	margin-left: 5em;
-	margin-bottom: 50em;
+	margin-bottom: 5em;
 	max-width: 5em;
 	border-radius: 50%;
+}
+
+.form {
+	margin-left: 2rem;
+	margin-right:2rem;
+	border: 0.2rem solid rgb(241, 206, 206);
+	border-radius: 20px 0px 20px 0px;
+	padding: 1rem;
+}
+
+.mb-3 {
+	color: white !important;
 }
 
 /* make hamburger menu show when screen size small*/

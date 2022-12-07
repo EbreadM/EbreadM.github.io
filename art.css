@@ -1,7 +1,14 @@
 * {
 	box-sizing:border-box; /* makes styling widths much easier */
-
 }
+
+.bar{
+    fill: navy;
+}
+.highlight{
+    fill:palevioletred;
+}
+
 #banner {
 	position: relative;
 	width: 100%;

@@ -35,7 +35,7 @@ window.onload = function () {
 
     const g = svg.append('g').attr('transform', 'translate(' + 100 + ',' + 100 + ')');
 
-    d3.csv('chart.csv').then(function (data) {
+    d3.csv('data.csv').then(function (data) {
       xScale.domain(data.map(function (d) { return d.year; }));
       yScale.domain([0, 15/* d3.max(data, function (d) { return d.value }) */]);
 

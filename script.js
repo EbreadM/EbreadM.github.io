@@ -90,4 +90,21 @@ window.onload = function () {
         .attr('y', function (d) { return yScale(d.value); })
         .attr('height', function (d) { return height - yScale(d.value); });
     }
+
+	const button1 = document.getElementById('button1')
+	const button2 = document.getElementById('button2')
+	//const button3 = document.getElementById('button3')
+
+	button1.onclick = function(){
+		d3.select('#graph1')
+			.style('display', 'block')
+		d3.select('#graph2')
+			.style('display', 'none')
+	}
+	button2.onclick = function(){
+		d3.select('#graph2')
+			.style('display', 'block')
+		d3.select('#graph1')
+			.style('display', 'none')
+	}
 };

@@ -251,6 +251,8 @@ p {
         grid-row: span 1;
     }
 }
-
+.gone{
+	display: none;
+}
 
 /*https://www.w3docs.com/snippets/css/how-to-maintain-the-aspect-ratio-of-a-div-with-css.html */

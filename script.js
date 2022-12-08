@@ -1,24 +1,24 @@
 // making banner animation
 window.onload = function () {
-	const banner = document.getElementById('banner');
-	const logo = document.getElementById('logo');
-	let deg = 100;
-	const timer = setInterval(function () {
-		banner.style = 'background-image: linear-gradient(' + deg + 'deg, #32327c, #32327c 5%, #703e79 6%, #703e79 26%, #844572 27%, #844572 51%, #32327c 52%, #32327c 100%';
-		logo.style = 'opacity: ' + (10.8 - 0.1 * deg) ** 2 + '%';
-		deg -= 2;
-		if (deg < 8) {
-			clearInterval(timer);
-		}
-	}, 10);
-	// making nav bar toggle
-	const toggleButton = document.getElementsByClassName('toggle-button')[0];
-	const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+const banner = document.getElementById('banner');
+const logo = document.getElementById('logo');
+let deg = 100;
+const timer = setInterval(function () {
+banner.style = 'background-image: linear-gradient(' + deg + 'deg, #32327c, #32327c 5%, #703e79 6%, #703e79 26%, #844572 27%, #844572 51%, #32327c 52%, #32327c 100%';
+logo.style = 'opacity: ' + (10.8 - 0.1 * deg) ** 2 + '%';
+deg -= 2;
+if (deg < 8) {
+clearInterval(timer);
+}
+}, 10);
+// making nav bar toggle
+const toggleButton = document.getElementsByClassName('toggle-button')[0];
+const navbarLinks = document.getElementsByClassName('navbar-links')[0];
 
-	toggleButton.addEventListener('click', () => {
-		navbarLinks.classList.toggle('active');
-	});
-	const svg = d3.select('svg');
+toggleButton.addEventListener('click', () => {
+navbarLinks.classList.toggle('active');
+});
+const svg = d3.select('svg');
     const margin = 200;
     const width = svg.attr('width') - margin;
     const height = svg.attr('height') - margin;
@@ -39,20 +39,20 @@ window.onload = function () {
       xScale.domain(data.map(function (d) { return d.year; }));
       yScale.domain([0, 15/* d3.max(data, function (d) { return d.value }) */]);
 
-      g.append('g').attr('transform', 'translate(0,' + height + ')')
+      g.append('g').attr('transform', 'translate(0,' + height + ')').style('color', 'white')
         .call(d3.axisBottom(xScale));
       g.append('g').call(d3.axisLeft(yScale).tickFormat(function (d) {
         return '$' + d;
       }).ticks(10));
 
-      g.append('g')
+      g.append('g').style('color', 'white')
         .call(d3.axisLeft(yScale).tickFormat(function (d) { return '$' + d; }))
         .append('text')
         .attr('transform', 'rotate(-90)')
         .attr('y', 10)
         .attr('dy', '-5em')
         .attr('text-anchor', 'end')
-        .attr('stroke', 'black')
+        .attr('stroke', 'white')
         .text('Hello my name is Barack Obama');
 
       g.selectAll('.bar')
@@ -91,20 +91,20 @@ window.onload = function () {
         .attr('height', function (d) { return height - yScale(d.value); });
     }
 
-	const button1 = document.getElementById('button1')
-	const button2 = document.getElementById('button2')
-	//const button3 = document.getElementById('button3')
+const button1 = document.getElementById('button1');
+const button2 = document.getElementById('button2');
+// const button3 = document.getElementById('button3')
 
-	button1.onclick = function(){
-		d3.select('#graph1')
-			.style('display', 'block')
-		d3.select('#graph2')
-			.style('display', 'none')
-	}
-	button2.onclick = function(){
-		d3.select('#graph2')
-			.style('display', 'block')
-		d3.select('#graph1')
-			.style('display', 'none')
-	}
+button1.onclick = function () {
+d3.select('#graph1')
+.style('display', 'block');
+d3.select('#graph2')
+.style('display', 'none');
+};
+button2.onclick = function () {
+d3.select('#graph2')
+.style('display', 'block');
+d3.select('#graph1')
+.style('display', 'none');
+};
 };
